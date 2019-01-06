@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import psycopg2
 
 
@@ -45,7 +47,6 @@ class Report(object):
         print("\nMost Popular Authors:")
         for item in result:
             print("{} - {} views".format(item[0], str(item[1])))
-        print("\n")
 
     def get_errors_over_threshold(self, threshold=1.0):
         """ Get any days where incoming requests resulted in errors over the
@@ -60,8 +61,9 @@ class Report(object):
                         and round(100*(e.errors::decimal/r.requests), 2) > %s;
                 """
         result = self._run_query(query, (threshold,))
-        print("{} - {}% errors".format(result[0][0], result[0][3]))
-        print("\n")
+        print("\nDays that over 1% of incoming requests resulted in errors; ")
+        for item in result:
+            print("{} - {}% errors".format(item[0], item[3]))
 
 
 def main():
