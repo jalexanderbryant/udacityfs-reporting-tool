@@ -14,7 +14,7 @@ class Report(object):
         return self._cursor.fetchall()
 
     def terminate_report(self):
-      self._conn.close()
+        self._conn.close()
 
     def get_most_popular_articles(self, x_most_popular=3):
         """ Get the 'x' most popular articles. Print as a formatted list """
@@ -77,4 +77,7 @@ def main():
     report.terminate_report()
 
 
-main()
+if __name__ == '__main__':
+    main()
+else:
+    print("Importing reporting class.")
