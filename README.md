@@ -1,4 +1,4 @@
-# Reporting Utility
+# News Website Statistics
 
 ## Description
 In the interest of modularity and cleanliness, the methods have been wrapped in a single class. Once a report is generated (class is instantiated), there are 4 public functions available to retrieve data:
@@ -6,6 +6,21 @@ In the interest of modularity and cleanliness, the methods have been wrapped in 
 * get_most_popular_authors - Gets the most popular articles by the number of times their articles have been viewed.
 * get_errors_over_threshold - Print any days where incoming requests resulted in errors over the specified threshold. Error is any request that did not result in a HTTP Status code of 200. Threshold defaults to 1.0% but can be changed in the method call.
 * terminate - closes the database connection
+
+## Requirements
+* Virtualbox - https://www.virtualbox.org/wiki/Downloads
+
+
+    No setup required for Virtualbox besides installation. We'll be using it to run a Vagrant instance. 
+
+* Vagrant - https://www.vagrantup.com/downloads.html
+
+
+* Python 3 - https://www.python.org/downloads/
+* PostgreSQL - https://www.postgresql.org/download/
+* psycopg2 Library - http://initd.org/psycopg/docs/install.html
+
+## 
 
 ### Example Output:
 ```
@@ -26,7 +41,7 @@ July 17, 2016 - 2.26% errors
 
 ## How to run
 1. Run views.
-2. In the command line, CD into 'reporting' directory, then run: `python app.py`.
+2. In the command line, CD into 'reporting' directory, then run: `python3 app.py`.
 
 
 ## Views
