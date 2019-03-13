@@ -40,7 +40,8 @@ July 17, 2016 - 2.26% errors
 ```
 
 ## How to run
-1. Run views.
+0. Run sql dump to setup database
+1. Create views.
 2. In the command line, CD into 'reporting' directory, then run: `python3 app.py`.
 
 
