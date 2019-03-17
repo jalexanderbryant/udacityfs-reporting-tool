@@ -1,7 +1,7 @@
 create view article_views as
 SELECT slug as article_slug, count(articles.slug) as count
         FROM articles, log
-        WHERE articles.slug = replace(log.path, '/article/', '')
+        WHERE log.path = CONCAT('/article/', articles.slug)
         and log.status LIKE '200%'
         GROUP BY articles.slug;
 
